@@ -65,4 +65,10 @@ public class PlayerController : MonoBehaviour {
         else
             return false;
     }
+
+    private void OnTriggerEnter2D(Collider2D col) {
+        if (col.gameObject.layer == LayerMask.NameToLayer("FallTrigger")) {
+            GameManager.Instance.GameOver();
+        }
+    }
 }
