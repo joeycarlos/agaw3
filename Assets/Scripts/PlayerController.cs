@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D col) {
-        if (col.gameObject.layer == LayerMask.NameToLayer("FallTrigger")) {
+        if (col.gameObject.layer == LayerMask.NameToLayer("LoseTrigger")) {
             GameManager.Instance.GameOver();
         }
     }
