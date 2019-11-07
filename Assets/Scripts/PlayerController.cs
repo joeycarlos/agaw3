@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour {
     bool isGrounded() {
         bool result1;
         bool result2;
-        Vector3 raycastOriginOffset = new Vector3(-bc.size.x, -bc.size.y + 0.05f, 0);
+        Vector3 raycastOriginOffset = new Vector3(-(bc.size.x + 0.5f), -bc.size.y + 0.05f, 0);
         RaycastHit2D hit = Physics2D.Raycast(transform.position + raycastOriginOffset, -Vector2.up, 0.2f, platformLayer);
         if (hit.collider == null) result1 = false;
         else result1 = true;
@@ -69,6 +69,8 @@ public class PlayerController : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D col) {
         if (col.gameObject.layer == LayerMask.NameToLayer("LoseTrigger")) {
             GameManager.Instance.GameOver();
+        } else if (col.gameObject.layer == LayerMask.NameToLayer("WinTrigger")) {
+            GameManager.Instance.Win();
         }
     }
 }

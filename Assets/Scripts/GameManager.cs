@@ -36,7 +36,8 @@ public class GameManager : MonoBehaviour
         // reload scene OR esc to go to start screen
     }
 
-    void Win() {
+    public void Win() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         // pause game
         // wait for player to press space
     }
