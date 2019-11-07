@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public int score;
+    public float score;
 
     void Awake() {
         _instance = this;
@@ -26,6 +26,11 @@ public class GameManager : MonoBehaviour
 
     void Start() {
         score = 0;
+    }
+
+    void Update() {
+        score += Time.deltaTime * 10.0f;
+        Debug.Log(score.ToString("F0"));
     }
 
     public void GameOver() {
