@@ -20,11 +20,19 @@ public class GameplayUI : MonoBehaviour
 
     public Text scoreValue;
 
+    public Text startPromptText;
+    public Image startPromptBackground;
+
     void Awake() {
         _instance = this;
     }
 
     void Update() {
         scoreValue.text = GameManager.Instance.score.ToString("F0");
+    }
+
+    public void DisableStartPrompt() {
+        startPromptText.enabled = false;
+        startPromptBackground.enabled = false;
     }
 }

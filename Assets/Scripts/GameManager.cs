@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
 
     void Start() {
         score = 0;
-        gameIsRunning = true;
+        gameIsRunning = false;
         gameHasEnded = false;
         GameOverUI.Instance.gameObject.SetActive(false);
     }
@@ -36,9 +36,16 @@ public class GameManager : MonoBehaviour
     void Update() {
         if (gameIsRunning) {
             score += Time.deltaTime * 10.0f;
-        } else if (gameHasEnded) {
+        }
+        else if (gameHasEnded) {
             if (Input.GetKeyDown(KeyCode.Space)) {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+        }
+        else {
+            if (Input.GetKeyDown(KeyCode.Space)) {
+                gameIsRunning = true;
+                GameplayUI.Instance.DisableStartPrompt();
             }
         }
     }

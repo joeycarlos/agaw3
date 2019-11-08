@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     void FixedUpdate() {
+        if (GameManager.Instance.gameIsRunning == true)
         transform.Translate(new Vector3(moveSpeed * Time.deltaTime, 0, 0));
     }
 
