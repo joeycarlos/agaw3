@@ -35,25 +35,28 @@ public class PlayerController : MonoBehaviour {
 
     void Update() {
         isGrounded();
-
-        if (Input.GetKeyDown(KeyCode.Space) && (isGrounded() || isGroundedRemember > 0)) {
-            isJumping = true;
-            jumpTimeCounter = maxJumpTime;
-            rb.velocity = Vector2.up * jumpForce;
-        }
-
-        if (Input.GetKey(KeyCode.Space) && isJumping == true) {
-            if (jumpTimeCounter > 0) {
+        if (GameManager.Instance.gameIsRunning == true) {
+            if (Input.GetKeyDown(KeyCode.Space) && (isGrounded() || isGroundedRemember > 0)) {
+                isJumping = true;
+                jumpTimeCounter = maxJumpTime;
                 rb.velocity = Vector2.up * jumpForce;
-                jumpTimeCounter -= Time.deltaTime;
-            } else {
+            }
+
+            if (Input.GetKey(KeyCode.Space) && isJumping == true) {
+                if (jumpTimeCounter > 0) {
+                    rb.velocity = Vector2.up * jumpForce;
+                    jumpTimeCounter -= Time.deltaTime;
+                }
+                else {
+                    isJumping = false;
+                }
+            }
+
+            if (Input.GetKeyUp(KeyCode.Space)) {
                 isJumping = false;
             }
         }
 
-        if (Input.GetKeyUp(KeyCode.Space)) {
-            isJumping = false;
-        }
     }
 
     bool isGrounded() {
