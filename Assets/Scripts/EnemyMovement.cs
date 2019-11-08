@@ -19,8 +19,10 @@ public class EnemyMovement : MonoBehaviour
 
     // Update is called once per frame
     void FixedUpdate() {
-        verticalOffset = moveAmplitude * Mathf.Sin(elapsedTime * moveFrequency + phaseShift);
-        transform.position = new Vector3(transform.position.x, originalY + verticalOffset, transform.position.z);
-        elapsedTime += Time.deltaTime;
+        if (GameManager.Instance.gameIsRunning) {
+            verticalOffset = moveAmplitude * Mathf.Sin(elapsedTime * moveFrequency + phaseShift);
+            transform.position = new Vector3(transform.position.x, originalY + verticalOffset, transform.position.z);
+            elapsedTime += Time.deltaTime;
+        }
     }
 }

@@ -112,10 +112,7 @@ public class PlayerController : MonoBehaviour {
             if (col.GetContact(0).normal.x == -1.0f) {
                 Destroy(gameObject);
                 GameManager.Instance.GameOver();
-            } else {
-                Platform p = col.gameObject.GetComponent<Platform>();
-                p.ChangeSprite();
-            }
+            } 
         }
     }
 }
