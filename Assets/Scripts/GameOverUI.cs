@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameplayUI : MonoBehaviour
+public class GameOverUI : MonoBehaviour
 {
-    private static GameplayUI _instance;
+    private static GameOverUI _instance;
 
-    public static GameplayUI Instance {
+    public static GameOverUI Instance {
         get {
             if (_instance == null) {
-                GameObject go = new GameObject("GameplayUI");
-                go.AddComponent<GameplayUI>();
+                GameObject go = new GameObject("GameOverUI");
+                go.AddComponent<GameOverUI>();
             }
 
             return _instance;

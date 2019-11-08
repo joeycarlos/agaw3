@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     }
 
     public float score;
+    public bool gameIsRunning;
+    public bool gameHasEnded;
 
     void Awake() {
         _instance = this;
@@ -26,10 +28,19 @@ public class GameManager : MonoBehaviour
 
     void Start() {
         score = 0;
+        gameIsRunning = true;
+        gameHasEnded = false;
+        GameOverUI.Instance.gameObject.SetActive(false);
     }
 
     void Update() {
-        score += Time.deltaTime * 10.0f;
+        if (gameIsRunning) {
+            score += Time.deltaTime * 10.0f;
+        } else if (gameHasEnded) {
+            if (Input.GetKeyDown(KeyCode.Space)) {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+        }
     }
 
     public void AddScore(float scoreToAdd) {
@@ -37,7 +48,11 @@ public class GameManager : MonoBehaviour
     }
 
     public void GameOver() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        gameIsRunning = false;
+        gameHasEnded = true;
+        GameplayUI.Instance.gameObject.SetActive(false);
+        GameOverUI.Instance.gameObject.SetActive(true);
+        // Disable UI
         // pause game
         // wait for player to press space
         // load GameOver overlay
