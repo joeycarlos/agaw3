@@ -30,7 +30,10 @@ public class GameManager : MonoBehaviour
 
     void Update() {
         score += Time.deltaTime * 10.0f;
-        Debug.Log(score.ToString("F0"));
+    }
+
+    public void AddScore(float scoreToAdd) {
+        score += scoreToAdd;
     }
 
     public void GameOver() {

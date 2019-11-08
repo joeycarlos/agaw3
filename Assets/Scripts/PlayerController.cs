@@ -81,6 +81,10 @@ public class PlayerController : MonoBehaviour {
             GameManager.Instance.GameOver();
         } else if (col.gameObject.layer == LayerMask.NameToLayer("WinTrigger")) {
             GameManager.Instance.Win();
+        } else if (col.gameObject.layer == LayerMask.NameToLayer("Pickup")) {
+            Pickup p = col.gameObject.GetComponent<Pickup>();
+            GameManager.Instance.AddScore(p.scoreValue);
+            p.DestroyPickup();
         }
     }
 }
