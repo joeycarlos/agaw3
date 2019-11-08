@@ -89,6 +89,8 @@ public class PlayerController : MonoBehaviour {
             GameManager.Instance.GameOver();
         }
         else if (col.gameObject.layer == LayerMask.NameToLayer("WinTrigger")) {
+            rb.gravityScale = 0;
+            rb.velocity = Vector3.zero;
             GameManager.Instance.Win();
         }
         else if (col.gameObject.layer == LayerMask.NameToLayer("Pickup")) {

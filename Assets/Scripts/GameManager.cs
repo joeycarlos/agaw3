@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
         gameIsRunning = false;
         gameHasEnded = false;
         GameOverUI.Instance.gameObject.SetActive(false);
+        WinUI.Instance.gameObject.SetActive(false);
     }
 
     void Update() {
@@ -69,7 +70,10 @@ public class GameManager : MonoBehaviour
     }
 
     public void Win() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        gameIsRunning = false;
+        gameHasEnded = true;
+        WinUI.Instance.gameObject.SetActive(true);
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         // pause game
         // wait for player to press space
     }
