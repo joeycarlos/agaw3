@@ -122,8 +122,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  jumpForce: 10
+  jumpForce: 15
   maxJumpTime: 0.3
+  isGroundedRememberTime: 0.15
 --- !u!50 &4917450746250502480
 Rigidbody2D:
   serializedVersion: 4

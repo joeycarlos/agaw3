@@ -15,11 +15,15 @@ public class PlayerController : MonoBehaviour {
     private float jumpTimeCounter;
     private bool isJumping;
 
+    public float isGroundedRememberTime = 0.15f;
+    private float isGroundedRemember;
+
     void Start() {
         bc = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
         platformLayer = LayerMask.GetMask("Platform");
         isJumping = false;
+        isGroundedRemember = 0;
     }
 
     void FixedUpdate() {
@@ -27,7 +31,9 @@ public class PlayerController : MonoBehaviour {
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded()) {
+        isGrounded();
+
+        if (Input.GetKeyDown(KeyCode.Space) && (isGrounded() || isGroundedRemember > 0)) {
             isJumping = true;
             jumpTimeCounter = maxJumpTime;
             rb.velocity = Vector2.up * jumpForce;
@@ -48,6 +54,9 @@ public class PlayerController : MonoBehaviour {
     }
 
     bool isGrounded() {
+        if (isGroundedRemember > 0)
+            isGroundedRemember -= Time.deltaTime;
+
         bool result1;
         bool result2;
         Vector3 raycastOriginOffset = new Vector3(-(bc.size.x + 0.5f), -bc.size.y + 0.05f, 0);
@@ -60,9 +69,10 @@ public class PlayerController : MonoBehaviour {
         if (hit.collider == null) result2 = false;
         else result2 = true;
 
-        if (result1 == true || result2 == true)
+        if (result1 == true || result2 == true) {
+            isGroundedRemember = isGroundedRememberTime;
             return true;
-        else
+        } else
             return false;
     }
 
