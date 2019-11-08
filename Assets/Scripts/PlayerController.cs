@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour {
 
     public float moveSpeed = 5.0f;
     public float jumpForce = 5.0f;
+    public float gravityValue = 7.0f;
 
     private BoxCollider2D bc;
     private Rigidbody2D rb;
@@ -24,11 +25,12 @@ public class PlayerController : MonoBehaviour {
         platformLayer = LayerMask.GetMask("Platform");
         isJumping = false;
         isGroundedRemember = 0;
+        rb.gravityScale = 0;
     }
 
     void FixedUpdate() {
         if (GameManager.Instance.gameIsRunning == true)
-        transform.Translate(new Vector3(moveSpeed * Time.deltaTime, 0, 0));
+            transform.Translate(new Vector3(moveSpeed * Time.deltaTime, 0, 0));
     }
 
     void Update() {
@@ -75,6 +77,10 @@ public class PlayerController : MonoBehaviour {
             return true;
         } else
             return false;
+    }
+
+    public void EnableGravity() {
+        rb.gravityScale = gravityValue;
     }
 
     private void OnTriggerEnter2D(Collider2D col) {
