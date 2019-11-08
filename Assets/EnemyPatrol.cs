@@ -28,7 +28,8 @@ public class EnemyPatrol : MonoBehaviour
             moveVector = new Vector3(-moveSpeed * Time.deltaTime, 0, 0);
         }
 
-        transform.Translate(moveVector);
+        if (GameManager.Instance.gameIsRunning)
+            transform.Translate(moveVector);
     }
 
     void CheckDirectionSwitch() {
