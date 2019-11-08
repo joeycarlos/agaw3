@@ -6,6 +6,7 @@ public class Platform : MonoBehaviour
 {
     public bool isTriggered;
     public float timeBetweenColor;
+    public GameObject particleSystem;
     private SpriteRenderer sr;
 
     void Start() {
@@ -34,6 +35,8 @@ public class Platform : MonoBehaviour
         if (collision.gameObject.tag == "Player" && isTriggered == false) {
             isTriggered = true;
             StartCoroutine("CycleColor");
+            GameObject iParticleSystem = Instantiate(particleSystem, transform.position, Quaternion.identity);
+            Destroy(iParticleSystem, 2.0f);
         }
     }
 }

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &4653149027590280708
+--- !u!1001 &3495821152189288609
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,17 +10,17 @@ PrefabInstance:
     - target: {fileID: 1462543759729168305, guid: 37e0a8e4c183e2a45b14b4be1becfd21,
         type: 3}
       propertyPath: m_Name
-      value: PlatformLarge
+      value: PlatformMedium (1)
       objectReference: {fileID: 0}
     - target: {fileID: 1469384012249123238, guid: 37e0a8e4c183e2a45b14b4be1becfd21,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 60.185043
+      value: 199.69623
       objectReference: {fileID: 0}
     - target: {fileID: 1469384012249123238, guid: 37e0a8e4c183e2a45b14b4be1becfd21,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.069097
+      value: -7.612651
       objectReference: {fileID: 0}
     - target: {fileID: 1469384012249123238, guid: 37e0a8e4c183e2a45b14b4be1becfd21,
         type: 3}
@@ -67,16 +67,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1469384012249123238, guid: 37e0a8e4c183e2a45b14b4be1becfd21,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: -2545247595831987616, guid: 37e0a8e4c183e2a45b14b4be1becfd21,
         type: 3}
       propertyPath: particleSystem
       value: 
-      objectReference: {fileID: 954336269547496928, guid: 679d8c5536cb5e04a825b898bb174972,
+      objectReference: {fileID: 8601042134176995673, guid: 88e23a4131293354081ae3ded28912f6,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37e0a8e4c183e2a45b14b4be1becfd21, type: 3}
