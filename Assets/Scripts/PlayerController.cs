@@ -79,12 +79,18 @@ public class PlayerController : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D col) {
         if (col.gameObject.layer == LayerMask.NameToLayer("LoseTrigger")) {
             GameManager.Instance.GameOver();
-        } else if (col.gameObject.layer == LayerMask.NameToLayer("WinTrigger")) {
+        }
+        else if (col.gameObject.layer == LayerMask.NameToLayer("WinTrigger")) {
             GameManager.Instance.Win();
-        } else if (col.gameObject.layer == LayerMask.NameToLayer("Pickup")) {
+        }
+        else if (col.gameObject.layer == LayerMask.NameToLayer("Pickup")) {
             Pickup p = col.gameObject.GetComponent<Pickup>();
             GameManager.Instance.AddScore(p.scoreValue);
             p.DestroyPickup();
+        }
+        else if (col.gameObject.layer == LayerMask.NameToLayer("Milestone")) {
+            Milestone m = col.gameObject.GetComponent<Milestone>();
+            moveSpeed += m.speedIncrease;
         }
     }
 }
