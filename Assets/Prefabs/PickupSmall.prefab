@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8038742023076017293}
   - component: {fileID: 8450615022801541066}
   - component: {fileID: 1367531992095177431}
+  - component: {fileID: 1720486091}
   m_Layer: 12
   m_Name: PickupSmall
   m_TagString: Untagged
@@ -121,3 +122,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreValue: 20
+--- !u!95 &1720486091
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7815160046405985774}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dfa3da8a5872a0549ab2abb61c2f4dea, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
