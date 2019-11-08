@@ -93,4 +93,11 @@ public class PlayerController : MonoBehaviour {
             moveSpeed += m.speedIncrease;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D col) {
+        if (col.gameObject.layer == LayerMask.NameToLayer("Platform")) {
+            Platform p = col.gameObject.GetComponent<Platform>();
+            p.ChangeSprite();
+        }
+    }
 }
