@@ -19,13 +19,17 @@ public class PlayerController : MonoBehaviour {
     public float isGroundedRememberTime = 0.15f;
     private float isGroundedRemember;
 
+    private SpriteRenderer sr;
+
     void Start() {
         bc = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
         platformLayer = LayerMask.GetMask("Platform");
         isJumping = false;
         isGroundedRemember = 0;
         rb.gravityScale = 0;
+        StartCoroutine("CycleColor");
     }
 
     void FixedUpdate() {
@@ -113,6 +117,13 @@ public class PlayerController : MonoBehaviour {
                 Destroy(gameObject);
                 GameManager.Instance.GameOver();
             } 
+        }
+    }
+
+    IEnumerator CycleColor() {
+        while (true) {
+            sr.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
+            yield return new WaitForSeconds(0.2f);
         }
     }
 }
