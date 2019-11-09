@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour {
     public float isGroundedRememberTime = 0.15f;
     private float isGroundedRemember;
 
+    public GameObject deathParticleEffect;
+
     void Start() {
         bc = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
@@ -95,6 +97,8 @@ public class PlayerController : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D col) {
         if (col.gameObject.layer == LayerMask.NameToLayer("LoseTrigger")) {
+            GameObject iDeathParticleEffect = Instantiate(deathParticleEffect, transform.position, Quaternion.identity);
+            Destroy(iDeathParticleEffect, 2.0f);
             Destroy(gameObject);
             GameManager.Instance.GameOver();
         }
@@ -117,6 +121,8 @@ public class PlayerController : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D col) {
         if (col.gameObject.layer == LayerMask.NameToLayer("Platform")) {
             if (col.GetContact(0).normal.x == -1.0f) {
+                GameObject iDeathParticleEffect = Instantiate(deathParticleEffect, transform.position, Quaternion.identity);
+                Destroy(iDeathParticleEffect, 2.0f);
                 Destroy(gameObject);
                 GameManager.Instance.GameOver();
             } 
