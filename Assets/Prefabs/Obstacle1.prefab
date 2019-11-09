@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8154451580148220208}
   - component: {fileID: 8154451580148220209}
   - component: {fileID: 8154451580148220210}
+  - component: {fileID: 1026237904508227649}
   m_Layer: 10
   m_Name: Obstacle1
   m_TagString: Untagged
@@ -94,7 +95,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.04204178}
+  m_Offset: {x: 0.055410385, y: 0.005101204}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -105,5 +106,24 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.9783859, y: 1.9809742}
+  m_Size: {x: 1.6459236, y: 1.6854515}
   m_EdgeRadius: 0
+--- !u!95 &1026237904508227649
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8154451580148220211}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 42906f4e423b70340ab3b1eb9fde9dbf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
