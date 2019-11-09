@@ -156,7 +156,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.34474012, g: 0.43446904, b: 0.5754717, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -287,6 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f00167ba582b59c40a2dc854135081e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameTitle: {fileID: 1389572077377597375}
 --- !u!1001 &1389572077377597374
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -414,3 +415,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29b762e236bc3464fa47765d6fa39766, type: 3}
+--- !u!114 &1389572077377597375 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1265546907, guid: 29b762e236bc3464fa47765d6fa39766,
+    type: 3}
+  m_PrefabInstance: {fileID: 1389572077377597374}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
