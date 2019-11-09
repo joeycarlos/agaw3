@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour {
     private float isGroundedRemember;
 
     public GameObject deathParticleEffect;
+    public GameObject pickupParticleEffect;
 
     void Start() {
         bc = GetComponent<BoxCollider2D>();
@@ -110,6 +111,8 @@ public class PlayerController : MonoBehaviour {
         else if (col.gameObject.layer == LayerMask.NameToLayer("Pickup")) {
             Pickup p = col.gameObject.GetComponent<Pickup>();
             GameManager.Instance.AddScore(p.scoreValue);
+            GameObject iPickupParticleEffect = Instantiate(pickupParticleEffect, transform.position, Quaternion.identity);
+            Destroy(iPickupParticleEffect, 2.0f);
             p.DestroyPickup();
         }
         else if (col.gameObject.layer == LayerMask.NameToLayer("Milestone")) {
