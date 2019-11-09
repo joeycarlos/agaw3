@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     public bool gameIsRunning;
     public bool gameHasEnded;
 
+    private AudioSource audioSource;
+
     void Awake() {
         _instance = this;
     }
@@ -32,6 +34,7 @@ public class GameManager : MonoBehaviour
         gameHasEnded = false;
         GameOverUI.Instance.gameObject.SetActive(false);
         WinUI.Instance.gameObject.SetActive(false);
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update() {
@@ -49,6 +52,7 @@ public class GameManager : MonoBehaviour
                 GameplayUI.Instance.DisableStartPrompt();
                 PlayerController p = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
                 p.EnableGravity();
+                audioSource.Play();
             }
         }
     }
