@@ -1849,11 +1849,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8943887342119226225, guid: e3a2772823116754a9a60fa7b32a31da,
-        type: 3}
-      propertyPath: speedIncrease
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3a2772823116754a9a60fa7b32a31da, type: 3}
 --- !u!1001 &297849935
@@ -11432,11 +11427,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameplayUI
-      objectReference: {fileID: 0}
-    - target: {fileID: 4293198341394933210, guid: 7dbf86bda248a454b8912ba1ada23297,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2054825895510215572, guid: 7dbf86bda248a454b8912ba1ada23297,
         type: 3}
