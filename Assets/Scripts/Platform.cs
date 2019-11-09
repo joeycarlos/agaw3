@@ -7,12 +7,16 @@ public class Platform : MonoBehaviour
     public bool isTriggered;
     public float timeBetweenColor;
     public GameObject particleSystem;
+
+    public AudioClip triggerSound;
     private SpriteRenderer sr;
+
+    private AudioSource audioSource;
 
     void Start() {
         isTriggered = false;
         sr = GetComponent<SpriteRenderer>();
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update() {
@@ -37,6 +41,7 @@ public class Platform : MonoBehaviour
             StartCoroutine("CycleColor");
             GameObject iParticleSystem = Instantiate(particleSystem, transform.position, Quaternion.identity);
             Destroy(iParticleSystem, 2.0f);
+            audioSource.PlayOneShot(triggerSound);
         }
     }
 }

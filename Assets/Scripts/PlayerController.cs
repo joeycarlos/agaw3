@@ -22,9 +22,14 @@ public class PlayerController : MonoBehaviour {
     public GameObject deathParticleEffect;
     public GameObject pickupParticleEffect;
 
+    public AudioClip jumpSound;
+    public AudioClip victorySound;
+    private AudioSource audioSource;
+
     void Start() {
         bc = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
         platformLayer = LayerMask.GetMask("Platform");
         isJumping = false;
         isGroundedRemember = 0;
@@ -43,6 +48,7 @@ public class PlayerController : MonoBehaviour {
                 isJumping = true;
                 jumpTimeCounter = maxJumpTime;
                 rb.velocity = Vector2.up * jumpForce;
+                audioSource.PlayOneShot(jumpSound);
             }
 
             if (Input.GetKey(KeyCode.Space) && isJumping == true) {
@@ -106,6 +112,7 @@ public class PlayerController : MonoBehaviour {
         else if (col.gameObject.layer == LayerMask.NameToLayer("WinTrigger")) {
             rb.gravityScale = 0;
             rb.velocity = Vector3.zero;
+            audioSource.PlayOneShot(victorySound);
             GameManager.Instance.Win();
         }
         else if (col.gameObject.layer == LayerMask.NameToLayer("Pickup")) {
