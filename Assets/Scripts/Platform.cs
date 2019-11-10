@@ -17,6 +17,7 @@ public class Platform : MonoBehaviour
         isTriggered = false;
         sr = GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
+        audioSource.pitch = Random.Range(0.4f, 0.9f);
     }
 
     void Update() {
