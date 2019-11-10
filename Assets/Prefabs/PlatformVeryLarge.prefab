@@ -166,27 +166,48 @@ PrefabInstance:
     - target: {fileID: 1469384012249123238, guid: 37e0a8e4c183e2a45b14b4be1becfd21,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 40
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1469384012249123238, guid: 37e0a8e4c183e2a45b14b4be1becfd21,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1387505480484032444, guid: 37e0a8e4c183e2a45b14b4be1becfd21,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b2bf95c0d9adeff4bb7444f1cf1da89e,
+        type: 3}
     - target: {fileID: 3358853833744553416, guid: 37e0a8e4c183e2a45b14b4be1becfd21,
         type: 3}
       propertyPath: m_Offset.x
-      value: -0.00042557716
+      value: -0.056663513
       objectReference: {fileID: 0}
     - target: {fileID: 3358853833744553416, guid: 37e0a8e4c183e2a45b14b4be1becfd21,
         type: 3}
       propertyPath: m_Offset.y
-      value: 0.018504381
+      value: 0.08648825
+      objectReference: {fileID: 0}
+    - target: {fileID: 3358853833744553416, guid: 37e0a8e4c183e2a45b14b4be1becfd21,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 40.156864
+      objectReference: {fileID: 0}
+    - target: {fileID: 3358853833744553416, guid: 37e0a8e4c183e2a45b14b4be1becfd21,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3358853833744553416, guid: 37e0a8e4c183e2a45b14b4be1becfd21,
         type: 3}
       propertyPath: m_Size.x
-      value: 1.000649
+      value: 39.91162
       objectReference: {fileID: 0}
     - target: {fileID: 3358853833744553416, guid: 37e0a8e4c183e2a45b14b4be1becfd21,
         type: 3}
       propertyPath: m_Size.y
-      value: 0.9720998
+      value: 1.7879229
       objectReference: {fileID: 0}
     - target: {fileID: -2545247595831987616, guid: 37e0a8e4c183e2a45b14b4be1becfd21,
         type: 3}
