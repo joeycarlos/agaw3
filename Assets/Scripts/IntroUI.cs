@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class IntroUI : MonoBehaviour
 {
     public Text gameTitle;
+    public Image smileImage1;
+    public Image smileImage2;
 
     void Start() {
         StartCoroutine("CycleColor");
@@ -20,6 +22,8 @@ public class IntroUI : MonoBehaviour
 
     public void UpdateColour() {
         gameTitle.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
+        smileImage1.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
+        smileImage2.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
     }
 
     IEnumerator CycleColor() {
